@@ -1,3 +1,5 @@
+![build](https://github.com/BranchSeeker/fast4g.ru-geo-files/actions/workflows/build.yml/badge.svg)
+
 # fast4g.ru geo files
 
 Универсальные `geosite.dat` и `geoip.dat` для Xray/V2Ray/Happ/INCY: всё, что
