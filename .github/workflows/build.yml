@@ -1,4 +1,5 @@
 name: build-geo
+# Rolling build: daily 03:00 MSK + manual + pushes touching the build.
 
 on:
   schedule:
