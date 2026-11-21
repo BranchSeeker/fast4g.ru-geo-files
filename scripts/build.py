@@ -1,4 +1,7 @@
-"""Build geosite.dat, geoip.dat and distribution assets."""
+"""Build geosite.dat, geoip.dat and distribution assets.
+
+Entry point: ``python -m scripts.build --out dist --refresh``.
+"""
 
 from __future__ import annotations
 
