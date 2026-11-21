@@ -1,0 +1,69 @@
+name: build-geo
+
+on:
+  schedule:
+    # 00:00 UTC = 03:00 MSK
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - "config/**"
+      - "data/**"
+      - "tests/**"
+      - ".github/workflows/build.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-geo
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Unit tests
+        run: python -m unittest discover -s tests -t . -v
+
+      - name: Build geo files
+        run: python -m scripts.build --out dist --refresh
+
+      - name: Verify
+        run: python -m scripts.verify dist
+
+      - name: Xray smoke test
+        run: python -m scripts.smoke_xray dist --cache .cache
+
+      - name: Upload build artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: geo-files
+          path: dist/
+          retention-days: 14
+
+      - name: Publish rolling release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view latest >/dev/null 2>&1; then
+            gh release upload latest dist/* --clobber
+            gh release edit latest --notes-file dist/RELEASE_NOTES.md
+          else
+            gh release create latest dist/* \
+              --title "fast4g.ru geo files" \
+              --notes-file dist/RELEASE_NOTES.md
+          fi

@@ -1,0 +1,8 @@
+# Дополнительные домены для russian-block.
+# По одному домену на строку. Поддерживаются форматы:
+#   example.com
+#   domain:example.com   (корневой домен + все поддомены)
+#   full:example.com     (только этот хост)
+#
+# Пример:
+#   domain:blocked-site.example

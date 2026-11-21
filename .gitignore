@@ -1,0 +1,7 @@
+dist/
+.cache/
+build.log
+smoke.log
+__pycache__/
+*.py[cod]
+.venv/

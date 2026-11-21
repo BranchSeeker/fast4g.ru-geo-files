@@ -1,0 +1,62 @@
+# Third-party data notice
+
+This repository builds geo files from public lists. The build code is MIT
+licensed (see `LICENSE`); the data below keeps the terms of its respective
+sources.
+
+## MIT licensed lists
+
+### roscomvpn-geosite
+
+- Source: https://github.com/hydraponique/roscomvpn-geosite
+- Used for: `whitelist`, `youtube`, `geoblock`, `telegram`, `github`,
+  `google-play`, `private` domains.
+- License: MIT
+- Copyright (c) 2018-2019 V2Ray
+
+### russia-mobile-internet-whitelist
+
+- Source: https://github.com/hxehex/russia-mobile-internet-whitelist
+- Used for: `whitelist` domains and CIDR.
+- License: MIT
+- Copyright (c) 2025 hxehex.real
+
+## Public lists
+
+### AntiZapret
+
+- Source: https://antizapret.prostovpn.org/domains-export.txt
+- Used for: `russian-block` domains.
+- Public export of domains blocked in Russia.
+
+### Antifilter.Download
+
+- Source: https://antifilter.download/list/allyouneed.lst
+- Used for: `geoip:russian-block`.
+- Public list of RKN registry subnets (CC0 / public registry data).
+
+### itdoginfo/allow-domains
+
+- Source: https://github.com/itdoginfo/allow-domains
+- Used for: additional `russian-block` domains, YouTube, geoblock and
+  service subnets.
+- No explicit license; used with attribution as a public community list.
+
+### v2fly/domain-list-community
+
+- Source: https://github.com/v2fly/domain-list-community
+- Used for: additional YouTube domains.
+- License: MIT (data may be distributed under CC-BY-SA-4.0; attribution kept).
+
+### RIPE Stat
+
+- Source: https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS36040
+- Used for: `geoip:youtube` (AS36040 announced prefixes).
+- Public routing data.
+
+## Notes
+
+- The lists are provided "as is", without warranty of any kind.
+- Domain and IP data can change at any time; a fresh build is published daily.
+- This project is not affiliated with Roskomnadzor, AntiZapret, Antifilter,
+  itdog, RoscomVPN or RIPE.

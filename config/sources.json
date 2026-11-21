@@ -1,0 +1,155 @@
+{
+  "geosite": {
+    "russian-block": {
+      "description": "Домены, заблокированные в РФ (lite: antizapret + itdog)",
+      "sources": [
+        {
+          "url": "https://antizapret.prostovpn.org/domains-export.txt",
+          "format": "domains"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Russia/inside-raw.lst",
+          "format": "domains"
+        }
+      ]
+    },
+    "whitelist": {
+      "description": "Домены, доступные при белых списках мобильного интернета",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/hydraponique/roscomvpn-geosite/master/data/whitelist",
+          "format": "domains"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hxehex/russia-mobile-internet-whitelist/main/whitelist.txt",
+          "format": "domains"
+        }
+      ]
+    },
+    "youtube": {
+      "description": "YouTube / GoogleVideo",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/hydraponique/roscomvpn-geosite/master/data/youtube",
+          "format": "domains"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/youtube.lst",
+          "format": "domains"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/youtube",
+          "format": "domains"
+        }
+      ]
+    },
+    "geoblock": {
+      "description": "Сервисы, которые сами ограничивают доступ из РФ",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/hydraponique/roscomvpn-geosite/master/data/category-geoblock-ru",
+          "format": "domains"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/geoblock.lst",
+          "format": "domains"
+        }
+      ]
+    },
+    "telegram": {
+      "description": "Telegram",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/hydraponique/roscomvpn-geosite/master/data/telegram",
+          "format": "domains"
+        }
+      ]
+    },
+    "github": {
+      "description": "GitHub",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/hydraponique/roscomvpn-geosite/master/data/github",
+          "format": "domains"
+        }
+      ]
+    },
+    "google-play": {
+      "description": "Google Play / Android",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/hydraponique/roscomvpn-geosite/master/data/google-play",
+          "format": "domains"
+        }
+      ]
+    },
+    "private": {
+      "description": "Локальные и служебные домены",
+      "allow_single_label": true,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/hydraponique/roscomvpn-geosite/master/data/private",
+          "format": "domains"
+        }
+      ]
+    }
+  },
+  "geoip": {
+    "russian-block": {
+      "description": "Подсети РКН и заблокированных сервисов",
+      "sources": [
+        {
+          "url": "https://antifilter.download/list/allyouneed.lst",
+          "format": "cidr"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/meta.lst",
+          "format": "cidr"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/twitter.lst",
+          "format": "cidr"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/discord.lst",
+          "format": "cidr"
+        }
+      ]
+    },
+    "whitelist": {
+      "description": "CIDR белого списка",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/hydraponique/roscomvpn-geoip/master/release/text/whitelist.txt",
+          "format": "cidr"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hxehex/russia-mobile-internet-whitelist/main/cidrwhitelist.txt",
+          "format": "cidr"
+        }
+      ]
+    },
+    "youtube": {
+      "description": "Префиксы YouTube CDN (AS36040)",
+      "sources": [
+        {
+          "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS36040",
+          "format": "ripe-asn"
+        },
+        {
+          "url": "data/youtube-ips.txt",
+          "format": "snapshot"
+        }
+      ]
+    },
+    "private": {
+      "description": "Приватные диапазоны",
+      "sources": [
+        {
+          "url": "builtin:private",
+          "format": "builtin-private"
+        }
+      ]
+    }
+  }
+}

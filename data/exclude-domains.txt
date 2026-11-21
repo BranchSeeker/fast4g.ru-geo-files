@@ -1,0 +1,11 @@
+# Домены, которые принудительно исключаются из категории russian-block.
+# По одному домену на строку. Нужны, чтобы ошибочно попавший в список
+# критический сервис не уходил в прокси.
+#
+# google.com и его тег-менеджер не блокируются в РФ; github/microsoft тоже.
+google.com
+googletagmanager.com
+github.com
+githubusercontent.com
+microsoft.com
+cloudflare-dns.com
