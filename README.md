@@ -19,7 +19,37 @@
 | `geoip.dat` | https://github.com/BranchSeeker/fast4g.ru-geo-files/releases/latest/download/geoip.dat |
 | Пресет «только заблокированное» | https://github.com/BranchSeeker/fast4g.ru-geo-files/releases/latest/download/HAPP-BLOCKED-ONLY.JSON |
 | Пресет «белые списки» | https://github.com/BranchSeeker/fast4g.ru-geo-files/releases/latest/download/HAPP-WHITELIST.JSON |
+| Пресет «только заблокированное» (jsDelivr) | https://github.com/BranchSeeker/fast4g.ru-geo-files/releases/latest/download/HAPP-BLOCKED-ONLY-JSDELIVR.JSON |
+| Пресет «белые списки» (jsDelivr) | https://github.com/BranchSeeker/fast4g.ru-geo-files/releases/latest/download/HAPP-WHITELIST-JSDELIVR.JSON |
 | Контрольные суммы | https://github.com/BranchSeeker/fast4g.ru-geo-files/releases/latest/download/SHA256SUMS |
+
+### Зеркала
+
+GitHub Release не отдаётся через jsDelivr напрямую, поэтому CI дополнительно
+публикует содержимое релиза в ветку `release` этого же репозитория. jsDelivr
+читает файлы из неё:
+
+| Файл | jsDelivr | GitHub Raw |
+|---|---|---|
+| `geosite.dat` | https://cdn.jsdelivr.net/gh/BranchSeeker/fast4g.ru-geo-files@release/geosite.dat | https://raw.githubusercontent.com/BranchSeeker/fast4g.ru-geo-files/release/geosite.dat |
+| `geoip.dat` | https://cdn.jsdelivr.net/gh/BranchSeeker/fast4g.ru-geo-files@release/geoip.dat | https://raw.githubusercontent.com/BranchSeeker/fast4g.ru-geo-files/release/geoip.dat |
+| `HAPP-BLOCKED-ONLY.JSON` | https://cdn.jsdelivr.net/gh/BranchSeeker/fast4g.ru-geo-files@release/HAPP-BLOCKED-ONLY.JSON | https://raw.githubusercontent.com/BranchSeeker/fast4g.ru-geo-files/release/HAPP-BLOCKED-ONLY.JSON |
+| `HAPP-WHITELIST.JSON` | https://cdn.jsdelivr.net/gh/BranchSeeker/fast4g.ru-geo-files@release/HAPP-WHITELIST.JSON | https://raw.githubusercontent.com/BranchSeeker/fast4g.ru-geo-files/release/HAPP-WHITELIST.JSON |
+| `HAPP-BLOCKED-ONLY-JSDELIVR.JSON` | https://cdn.jsdelivr.net/gh/BranchSeeker/fast4g.ru-geo-files@release/HAPP-BLOCKED-ONLY-JSDELIVR.JSON | https://raw.githubusercontent.com/BranchSeeker/fast4g.ru-geo-files/release/HAPP-BLOCKED-ONLY-JSDELIVR.JSON |
+| `HAPP-WHITELIST-JSDELIVR.JSON` | https://cdn.jsdelivr.net/gh/BranchSeeker/fast4g.ru-geo-files@release/HAPP-WHITELIST-JSDELIVR.JSON | https://raw.githubusercontent.com/BranchSeeker/fast4g.ru-geo-files/release/HAPP-WHITELIST-JSDELIVR.JSON |
+
+`@release` — плавающая ссылка: обновляется ежедневно. jsDelivr кеширует файлы
+ветки, поэтому после каждой сборки CI вызывает purge. Если вы видите старую
+версию, можно очистить кеш вручную:
+
+```
+https://purge.jsdelivr.net/gh/BranchSeeker/fast4g.ru-geo-files@release/geosite.dat
+https://purge.jsdelivr.net/gh/BranchSeeker/fast4g.ru-geo-files@release/geoip.dat
+```
+
+Для неизменяемой ссылки используйте коммит ветки `release`:
+`https://cdn.jsdelivr.net/gh/BranchSeeker/fast4g.ru-geo-files@<commit>/geosite.dat`.
+SHA коммита печатается в логе шага `Publish jsDelivr branch`.
 
 ## Категории
 

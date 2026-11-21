@@ -11,6 +11,7 @@ from dataclasses import dataclass
 class PresetConfig:
     repository: str
     release_url: str
+    mirror_url: str
     updated_at: int
 
 
@@ -22,6 +23,7 @@ def _base_preset(
     direct_ip: list[str],
     proxy_sites: list[str],
     proxy_ip: list[str],
+    base_url: str,
     config: PresetConfig,
 ) -> dict:
     return {
@@ -36,8 +38,8 @@ def _base_preset(
         "DomesticDNSType": "DoH",
         "DomesticDNSDomain": "https://77.88.8.8/dns-query",
         "DomesticDNSIP": "77.88.8.8",
-        "Geoipurl": f"{config.release_url}/geoip.dat",
-        "Geositeurl": f"{config.release_url}/geosite.dat",
+        "Geoipurl": f"{base_url}/geoip.dat",
+        "Geositeurl": f"{base_url}/geosite.dat",
         "LastUpdated": str(config.updated_at),
         "DnsHosts": {
             "lkfl2.nalog.ru": "213.24.64.175",
@@ -55,11 +57,9 @@ def _base_preset(
     }
 
 
-def build_presets(config: PresetConfig) -> dict[str, str]:
-    """Return ``{filename: json_text}`` for the two supported presets."""
-
-    blocked_only = _base_preset(
-        name="BLOCKED-ONLY",
+def _blocked_only(config: PresetConfig, base_url: str, name: str) -> dict:
+    return _base_preset(
+        name=name,
         global_proxy=False,
         direct_sites=["geosite:private", "geosite:whitelist"],
         direct_ip=["geoip:private", "geoip:whitelist"],
@@ -72,22 +72,43 @@ def build_presets(config: PresetConfig) -> dict[str, str]:
             "geosite:google-play",
         ],
         proxy_ip=["geoip:russian-block", "geoip:youtube"],
+        base_url=base_url,
         config=config,
     )
 
-    whitelist = _base_preset(
-        name="WHITELIST",
+
+def _whitelist(config: PresetConfig, base_url: str, name: str) -> dict:
+    return _base_preset(
+        name=name,
         global_proxy=True,
         direct_sites=["geosite:private", "geosite:whitelist"],
         direct_ip=["geoip:private", "geoip:whitelist"],
         proxy_sites=[],
         proxy_ip=[],
+        base_url=base_url,
         config=config,
     )
 
+
+def build_presets(config: PresetConfig) -> dict[str, str]:
+    """Return ``{filename: json_text}`` for GitHub and jsDelivr variants."""
+
+    presets = {
+        "HAPP-BLOCKED-ONLY.JSON": _blocked_only(
+            config, config.release_url, "BLOCKED-ONLY"
+        ),
+        "HAPP-WHITELIST.JSON": _whitelist(config, config.release_url, "WHITELIST"),
+    }
+    if config.mirror_url:
+        presets["HAPP-BLOCKED-ONLY-JSDELIVR.JSON"] = _blocked_only(
+            config, config.mirror_url, "BLOCKED-ONLY (jsDelivr)"
+        )
+        presets["HAPP-WHITELIST-JSDELIVR.JSON"] = _whitelist(
+            config, config.mirror_url, "WHITELIST (jsDelivr)"
+        )
     return {
-        "HAPP-BLOCKED-ONLY.JSON": json.dumps(blocked_only, ensure_ascii=False, indent=2) + "\n",
-        "HAPP-WHITELIST.JSON": json.dumps(whitelist, ensure_ascii=False, indent=2) + "\n",
+        name: json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
+        for name, payload in presets.items()
     }
 
 
@@ -95,5 +116,6 @@ def default_preset_config(repository: str) -> PresetConfig:
     return PresetConfig(
         repository=repository,
         release_url=f"https://github.com/{repository}/releases/latest/download",
+        mirror_url=f"https://cdn.jsdelivr.net/gh/{repository}@release",
         updated_at=int(time.time()),
     )

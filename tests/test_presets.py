@@ -11,15 +11,22 @@ class PresetsTest(unittest.TestCase):
         config = PresetConfig(
             repository="owner/repo",
             release_url="https://github.com/owner/repo/releases/latest/download",
+            mirror_url="https://cdn.jsdelivr.net/gh/owner/repo@release",
             updated_at=1700000000,
         )
         presets = build_presets(config)
         self.assertEqual(
             sorted(presets),
-            ["HAPP-BLOCKED-ONLY.JSON", "HAPP-WHITELIST.JSON"],
+            [
+                "HAPP-BLOCKED-ONLY-JSDELIVR.JSON",
+                "HAPP-BLOCKED-ONLY.JSON",
+                "HAPP-WHITELIST-JSDELIVR.JSON",
+                "HAPP-WHITELIST.JSON",
+            ],
         )
         blocked = json.loads(presets["HAPP-BLOCKED-ONLY.JSON"])
         whitelist = json.loads(presets["HAPP-WHITELIST.JSON"])
+        blocked_mirror = json.loads(presets["HAPP-BLOCKED-ONLY-JSDELIVR.JSON"])
 
         self.assertFalse(blocked["GlobalProxy"])
         self.assertTrue(whitelist["GlobalProxy"])
@@ -28,6 +35,12 @@ class PresetsTest(unittest.TestCase):
         self.assertEqual(whitelist["ProxySites"], [])
         self.assertEqual(blocked["Geositeurl"], config.release_url + "/geosite.dat")
         self.assertEqual(blocked["Geoipurl"], config.release_url + "/geoip.dat")
+        self.assertEqual(
+            blocked_mirror["Geositeurl"], config.mirror_url + "/geosite.dat"
+        )
+        self.assertEqual(
+            blocked_mirror["Geoipurl"], config.mirror_url + "/geoip.dat"
+        )
         self.assertEqual(blocked["LastUpdated"], "1700000000")
 
 

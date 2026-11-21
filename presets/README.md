@@ -1,13 +1,19 @@
 # Пресеты Happ
 
-В релизе лежат два готовых профиля. Они генерируются при каждой сборке из
+В релизе лежат четыре готовых профиля. Они генерируются при каждой сборке из
 `scripts/presets.py`, поэтому `Geoipurl`/`Geositeurl` всегда указывают на
-актуальный релиз.
+актуальный релиз или зеркало.
 
-| Файл | `GlobalProxy` | Что делает |
+| Файл | `GlobalProxy` | Откуда geo-файлы |
 |---|---|---|
-| `HAPP-BLOCKED-ONLY.JSON` | `false` | в прокси только `russian-block`, `geoblock`, `youtube`, `telegram`, `github`, `google-play`; остальное напрямую |
-| `HAPP-WHITELIST.JSON` | `true` | напрямую только `whitelist` + `private`, остальное через VPN |
+| `HAPP-BLOCKED-ONLY.JSON` | `false` | GitHub Release |
+| `HAPP-WHITELIST.JSON` | `true` | GitHub Release |
+| `HAPP-BLOCKED-ONLY-JSDELIVR.JSON` | `false` | jsDelivr (`@release`) |
+| `HAPP-WHITELIST-JSDELIVR.JSON` | `true` | jsDelivr (`@release`) |
+
+BLOCKED-ONLY: в прокси только `russian-block`, `geoblock`, `youtube`,
+`telegram`, `github`, `google-play`; остальное напрямую. WHITELIST: напрямую
+только `whitelist` + `private`, остальное через VPN.
 
 ## BLOCKED-ONLY
 

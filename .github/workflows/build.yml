@@ -68,3 +68,33 @@ jobs:
               --title "fast4g.ru geo files" \
               --notes-file dist/RELEASE_NOTES.md
           fi
+
+      - name: Publish jsDelivr branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mirror="$(mktemp -d)"
+          cp -a dist/. "$mirror/"
+          cd "$mirror"
+          git init -q
+          git checkout -q -b release
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Build ${GITHUB_SHA::12} $(date -u +%FT%TZ)"
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push --force origin release
+          echo "MIRROR_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Purge jsDelivr cache
+        run: |
+          sleep 5
+          for file in geosite.dat geoip.dat \
+                      HAPP-BLOCKED-ONLY.JSON HAPP-WHITELIST.JSON \
+                      HAPP-BLOCKED-ONLY-JSDELIVR.JSON HAPP-WHITELIST-JSDELIVR.JSON \
+                      SHA256SUMS build-info.json; do
+            curl -fsS --retry 3 --max-time 20 \
+              "https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@release/${file}" \
+              >/dev/null || true
+          done
