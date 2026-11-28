@@ -1,0 +1,276 @@
+{
+  "schema": 1,
+  "repository": "BranchSeeker/fast4g.ru-geo-files",
+  "built_at": "2026-11-28T06:35:22+00:00",
+  "commit": "d32d0e9a8e3f",
+  "categories": {
+    "geosite": {
+      "russian-block": 123312,
+      "whitelist": 1342,
+      "youtube": 182,
+      "geoblock": 960,
+      "telegram": 26,
+      "github": 27,
+      "google-play": 29,
+      "private": 129
+    },
+    "geoip": {
+      "russian-block": 12292,
+      "whitelist": 30655,
+      "youtube": 64,
+      "private": 15
+    }
+  },
+  "sources": [
+    {
+      "category": "russian-block",
+      "url": "https://antizapret.prostovpn.org/domains-export.txt",
+      "sha256": "091bf258ff63c6179977a0339cc261740f2f4d53f39105f2d33e2e4e82633e89",
+      "bytes": 1822986,
+      "items": 122533,
+      "fetched_at": "2026-11-28T06:35:23+00:00"
+    },
+    {
+      "category": "russian-block",
+      "url": "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Russia/inside-raw.lst",
+      "sha256": "f1b6ccbf8ea96272af0ae178388814d400009cee541a55b6aa976612aed28ca6",
+      "bytes": 15956,
+      "items": 1182,
+      "fetched_at": "2026-11-28T06:35:24+00:00"
+    },
+    {
+      "category": "whitelist",
+      "url": "https://raw.githubusercontent.com/hydraponique/roscomvpn-geosite/master/data/whitelist",
+      "sha256": "c369ee5b0c1991eeac520135cbdeb8bb34655cc37f53bc1e6bc1d947da97b50b",
+      "bytes": 8847,
+      "items": 465,
+      "fetched_at": "2026-11-28T06:35:24+00:00"
+    },
+    {
+      "category": "whitelist",
+      "url": "https://raw.githubusercontent.com/hxehex/russia-mobile-internet-whitelist/main/whitelist.txt",
+      "sha256": "dfa4ffeec6c97a6feb7c594934d0c8b4e170fadff1d781f0de012ee383832eb9",
+      "bytes": 15648,
+      "items": 910,
+      "fetched_at": "2026-11-28T06:35:24+00:00"
+    },
+    {
+      "category": "youtube",
+      "url": "https://raw.githubusercontent.com/hydraponique/roscomvpn-geosite/master/data/youtube",
+      "sha256": "0c96a8afafe52d85cdf8fa6c9f827b5a91bc467776e11f70b2ad9d18dd0fbbba",
+      "bytes": 3612,
+      "items": 176,
+      "fetched_at": "2026-11-28T06:35:24+00:00"
+    },
+    {
+      "category": "youtube",
+      "url": "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/youtube.lst",
+      "sha256": "71fac5162d67fce8ffd0be6287de6f9159507abdab21573eb3eda813641582c2",
+      "bytes": 344,
+      "items": 18,
+      "fetched_at": "2026-11-28T06:35:24+00:00"
+    },
+    {
+      "category": "youtube",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/youtube",
+      "sha256": "9ffb657176fdffed567953749c137bb3d8a216ce4e839b3831b626c752902213",
+      "bytes": 2444,
+      "items": 177,
+      "fetched_at": "2026-11-28T06:35:24+00:00"
+    },
+    {
+      "category": "geoblock",
+      "url": "https://raw.githubusercontent.com/hydraponique/roscomvpn-geosite/master/data/category-geoblock-ru",
+      "sha256": "c71fcf9db06e5f4524a337384595959efb15a85a20a8390fbe44ea64f7af5cbc",
+      "bytes": 20787,
+      "items": 772,
+      "fetched_at": "2026-11-28T06:35:24+00:00"
+    },
+    {
+      "category": "geoblock",
+      "url": "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/geoblock.lst",
+      "sha256": "7fc41ff662724abfecfc70795a4130995f9072dabccf93638a33037f5f5ac5a5",
+      "bytes": 6622,
+      "items": 465,
+      "fetched_at": "2026-11-28T06:35:24+00:00"
+    },
+    {
+      "category": "telegram",
+      "url": "https://raw.githubusercontent.com/hydraponique/roscomvpn-geosite/master/data/telegram",
+      "sha256": "0dc8201fa080ab4ae8579f96fe41c707bee0a1f2a4b1b2bd4542b9cf66b9b043",
+      "bytes": 499,
+      "items": 26,
+      "fetched_at": "2026-11-28T06:35:24+00:00"
+    },
+    {
+      "category": "github",
+      "url": "https://raw.githubusercontent.com/hydraponique/roscomvpn-geosite/master/data/github",
+      "sha256": "54c72f1e63d19765682181edada4530dfe858a5cfa2cfe936f40fadce4f40f18",
+      "bytes": 670,
+      "items": 27,
+      "fetched_at": "2026-11-28T06:35:24+00:00"
+    },
+    {
+      "category": "google-play",
+      "url": "https://raw.githubusercontent.com/hydraponique/roscomvpn-geosite/master/data/google-play",
+      "sha256": "163bfff8f05b7b3eae5ce1f871d28d7d13844202a0020676b6741038338323a9",
+      "bytes": 1103,
+      "items": 29,
+      "fetched_at": "2026-11-28T06:35:24+00:00"
+    },
+    {
+      "category": "private",
+      "url": "https://raw.githubusercontent.com/hydraponique/roscomvpn-geosite/master/data/private",
+      "sha256": "016a5811f285f0032821e1cb6c00545720ae7af9fe21820551e069ab7febe199",
+      "bytes": 4043,
+      "items": 129,
+      "fetched_at": "2026-11-28T06:35:24+00:00"
+    },
+    {
+      "category": "russian-block",
+      "url": "https://antifilter.download/list/allyouneed.lst",
+      "sha256": "89f44de596aac61f3b430207d9e4bf9437aac54bfe0148ab9db8a8a8d817bc44",
+      "bytes": 191926,
+      "items": 12284,
+      "fetched_at": "2026-11-28T06:35:26+00:00"
+    },
+    {
+      "category": "russian-block",
+      "url": "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/meta.lst",
+      "sha256": "f40e5ba1ded30dceb01300ac2b0644806749620ddd0c8359f90520a5cc2dafb4",
+      "bytes": 1311,
+      "items": 81,
+      "fetched_at": "2026-11-28T06:35:26+00:00"
+    },
+    {
+      "category": "russian-block",
+      "url": "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/twitter.lst",
+      "sha256": "b8011e0b7f29cef61a76580c75f6840bc6fc3eae0f747fdc5672cc9090c7c6f5",
+      "bytes": 158,
+      "items": 10,
+      "fetched_at": "2026-11-28T06:35:26+00:00"
+    },
+    {
+      "category": "russian-block",
+      "url": "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/discord.lst",
+      "sha256": "63b7993720bb2db42a70d52d6bbb87e918f9f2cb7cedd32670b32da2f92815ed",
+      "bytes": 143,
+      "items": 10,
+      "fetched_at": "2026-11-28T06:35:26+00:00"
+    },
+    {
+      "category": "whitelist",
+      "url": "https://raw.githubusercontent.com/hydraponique/roscomvpn-geoip/master/release/text/whitelist.txt",
+      "sha256": "5cf0b8862ad4f3318831dcf2e94076e221320ff47d77f1a12ebe661f613f70f6",
+      "bytes": 115173,
+      "items": 6710,
+      "fetched_at": "2026-11-28T06:35:26+00:00"
+    },
+    {
+      "category": "whitelist",
+      "url": "https://raw.githubusercontent.com/hxehex/russia-mobile-internet-whitelist/main/cidrwhitelist.txt",
+      "sha256": "149d27a8e3502b95b9a378817854c87af6417c2a9bbf0b17eb8f7affef1f3868",
+      "bytes": 470393,
+      "items": 30228,
+      "fetched_at": "2026-11-28T06:35:26+00:00"
+    },
+    {
+      "category": "youtube",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS36040",
+      "sha256": "7467dd999be7c00d6506228272020ba70425ed3ffc89cecc6b881b477b76c3c1",
+      "bytes": 17392,
+      "items": 140,
+      "fetched_at": "2026-11-28T06:35:27+00:00"
+    },
+    {
+      "category": "youtube",
+      "url": "data/youtube-ips.txt",
+      "sha256": "da063d3e86f11bd406083f6895208fb0bd5f677302b07609adda7fa76c41f6c6",
+      "bytes": 2632,
+      "items": 140,
+      "fetched_at": "2026-11-28T06:35:21+00:00"
+    },
+    {
+      "category": "private",
+      "url": "builtin:private",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "items": 15,
+      "fetched_at": "2026-11-28T06:35:27+00:00"
+    }
+  ],
+  "files": {
+    "youtube-ips.txt": {
+      "bytes": 1080,
+      "sha256": "22a32030cff23faf74b4421e06d593244b2f3ee3c072ac941d6d809f3bbd768f"
+    },
+    "private-ips.txt": {
+      "bytes": 193,
+      "sha256": "4621158e4daa8a2ad3d5e0e93cda0bd4edff90b429aa2ffca62f862509344d1f"
+    },
+    "HAPP-BLOCKED-ONLY-JSDELIVR.JSON": {
+      "bytes": 1194,
+      "sha256": "eab5da76b40755b457adc4d30d99e1fb99a20fbc43e4641f3dac5ccfba717653"
+    },
+    "youtube-domains.txt": {
+      "bytes": 2490,
+      "sha256": "e334a3f4dde9f27bb91a3d6823501788ffea0fd39e7561a1843ac42a72ee9ba9"
+    },
+    "russian-block-ips.txt": {
+      "bytes": 192043,
+      "sha256": "9d841fa3f67c814e25cc65eee2e3484f4565d2411230c4457777778404a8f526"
+    },
+    "github-domains.txt": {
+      "bytes": 405,
+      "sha256": "a85d2dc53c297eb3bf186a4be68791ec35958d52334dc7833dc142c459277c5d"
+    },
+    "russian-block-domains.txt": {
+      "bytes": 1833753,
+      "sha256": "2dd85afd1344011eae85b8a24e32c539b3fe588329fabbfa047d3c56ea3cb923"
+    },
+    "HAPP-BLOCKED-ONLY.JSON": {
+      "bytes": 1199,
+      "sha256": "6eb38fad76b942e101da52a5fb8e5832507212fc2a7e2d12c92ac7ff2aa33c00"
+    },
+    "geosite.dat": {
+      "bytes": 2505427,
+      "sha256": "616489abd9d543867461fed28afc2d94d249ac6b804e0755f3c692bab963dd22"
+    },
+    "private-domains.txt": {
+      "bytes": 2482,
+      "sha256": "53d060a2776cbdb75f8038384016a12c62c3a81c66ee48dc6e639fd610e3bbd1"
+    },
+    "whitelist-ips.txt": {
+      "bytes": 477812,
+      "sha256": "3981113af13595a595f5b29f3ee6e1f69208f21738af3fa8c81b2ce485ba299d"
+    },
+    "geoblock-domains.txt": {
+      "bytes": 14379,
+      "sha256": "175b68ab8cad27312a307209e171a5296238574a689a7ef3d37615e62f160260"
+    },
+    "whitelist-domains.txt": {
+      "bytes": 20693,
+      "sha256": "48f624c29b972ab0dd9e111f027fa63116782bac84b8c6bd2976be43af5877b7"
+    },
+    "telegram-domains.txt": {
+      "bytes": 317,
+      "sha256": "6ffd22eca24866c52a7337da99c667ce65743f754c013a9d9c7ed610fccbdb13"
+    },
+    "HAPP-WHITELIST-JSDELIVR.JSON": {
+      "bytes": 989,
+      "sha256": "af70e9ac231d27242ef9b0c35e95f36033798b3d39581ce195ad986f345b2c1c"
+    },
+    "geoip.dat": {
+      "bytes": 430571,
+      "sha256": "5f497badd73a0b76520635092b443d15570e75435f035d1dbee215c61943b60b"
+    },
+    "google-play-domains.txt": {
+      "bytes": 815,
+      "sha256": "c52630ba62931a905a2ab761ff89d3e22621146819bc9799a33ee237a5b53be6"
+    },
+    "HAPP-WHITELIST.JSON": {
+      "bytes": 994,
+      "sha256": "368e13002c1e81eb3e8836e63bd6a04054dd667c8aa32243d684fec3fcb1fbc0"
+    }
+  }
+}

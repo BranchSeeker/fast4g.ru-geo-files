@@ -1,0 +1,45 @@
+{
+  "Name": "BLOCKED-ONLY (jsDelivr)",
+  "GlobalProxy": false,
+  "UseChunkFiles": "true",
+  "RemoteDns": "8.8.8.8",
+  "DomesticDns": "77.88.8.8",
+  "RemoteDNSType": "DoH",
+  "RemoteDNSDomain": "https://8.8.8.8/dns-query",
+  "RemoteDNSIP": "8.8.8.8",
+  "DomesticDNSType": "DoH",
+  "DomesticDNSDomain": "https://77.88.8.8/dns-query",
+  "DomesticDNSIP": "77.88.8.8",
+  "Geoipurl": "https://cdn.jsdelivr.net/gh/BranchSeeker/fast4g.ru-geo-files@release/geoip.dat",
+  "Geositeurl": "https://cdn.jsdelivr.net/gh/BranchSeeker/fast4g.ru-geo-files@release/geosite.dat",
+  "LastUpdated": "1795847728",
+  "DnsHosts": {
+    "lkfl2.nalog.ru": "213.24.64.175",
+    "lknpd.nalog.ru": "213.24.64.181"
+  },
+  "RouteOrder": "block-proxy-direct",
+  "DirectSites": [
+    "geosite:private",
+    "geosite:whitelist"
+  ],
+  "DirectIp": [
+    "geoip:private",
+    "geoip:whitelist"
+  ],
+  "ProxySites": [
+    "geosite:russian-block",
+    "geosite:geoblock",
+    "geosite:youtube",
+    "geosite:telegram",
+    "geosite:github",
+    "geosite:google-play"
+  ],
+  "ProxyIp": [
+    "geoip:russian-block",
+    "geoip:youtube"
+  ],
+  "BlockSites": [],
+  "BlockIp": [],
+  "DomainStrategy": "IPIfNonMatch",
+  "FakeDNS": false
+}
